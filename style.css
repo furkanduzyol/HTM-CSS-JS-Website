@@ -1,0 +1,2071 @@
+/* ====== style-responsive.css ======
+   Original style.css (user-provided) + responsive improvements
+   Created by assistant to make site responsive for Laptop / Tablet / Phone
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ========== GENERAL ========== */
+.menu a.active {
+    background: #0b6623;   /* green background */
+    color: #fff;           /* white text */
+    padding: 13px 10px;
+    border-radius: 0px;   /* same padding as the example image */
+        
+}
+.menu a:hover:not(.active) {
+    color: #0b6623;
+}
+.hamburger {
+    display: none; /* büyük ekranda gizle */
+}
+
+
+.navbar {
+    width: 100%;
+    font-family: Arial, sans-serif;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+
+/* ========== TOP BAR ========== */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 200px;
+    
+}
+
+.logo {
+    height: 65px;
+    margin-left: 40px;
+}
+
+
+/* --- Right Side (Login + Language) --- */
+.top-right {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    margin-right: -10px;
+}
+
+.login {
+    text-decoration: none;
+    color: #0b6623;
+    font-weight: bold;
+    font-size: 17px;
+    
+}
+
+.lang {
+    padding: 6px 8px;
+    font-size: 17px;
+    border-radius: 4px;
+    border: none;
+    background: #fff;
+    cursor: pointer;
+    
+}
+
+.lang option:checked {
+    display: none;
+}
+
+
+/* ========== BOTTOM NAV MENU ========== */
+.menu {
+    display: flex;
+    justify-content: center;   /* MENÜYÜ ORTALAR */
+    gap: 35px;                 /* Menü elemanları arası daha geniş */
+    padding: 0px;
+    margin: 0px;
+    margin-left:-300px;
+    margin-bottom: -1px;       /* MENÜNÜN SAĞA KAYMASI İÇİN */
+}
+
+
+@media (max-width: 1503px){
+  .menu {
+    display: flex;
+    justify-content: center;   /* MENÜYÜ ORTALAR */
+    gap: 35px;                 /* Menü elemanları arası daha geniş */
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: -1px; 
+            /* MENÜNÜN SAĞA KAYMASI İÇİN */
+}
+}
+
+
+.menu a {
+    display: inline-block;
+    text-decoration: none;
+    font-size: 20px;           /* Yazılar daha küçük */
+    font-weight: 500;          /* Yazılar daha ince */
+    color: #333;
+    padding: 13px 10px;
+    transition: 0.2s;
+    margin: 0;
+    margin-bottom: 0px;
+    
+}
+
+.menu a:hover {
+    color: #0b6623;
+}
+
+.menu a.active {
+    background: #0b6623;
+    color: #fff;
+    border-radius: 0px;
+}
+.login-icon {
+    width: 17px;     /* İkon boyutu */
+    height: 17px;
+    object-fit: contain;
+}
+
+header.navbar {
+    margin: 0;
+    padding: 0;
+}
+ul {
+    list-style-type: disc; /* Nokta dolu */
+    list-style-position: inside; /* Nokta içeride */
+    color: black; /* Noktaların rengi */
+}
+li {
+    color: black; /* Yazının rengi, opsiyonel */
+}
+
+/* NAV menünün mobilde gizli hali */
+.menu {
+    transition: max-height 0.3s ease;
+}
+@media (max-width: 1202px) {
+
+    /* Üst bar: sol - orta - sağ */
+    .top-bar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: relative;
+        margin-bottom: 20px;
+        margin-top: 20px;
+    }
+
+    /* LOGO ORTA */
+    .top-bar .logo {
+        position: absolute;
+        left: 10%;
+        top: 2px;
+        transform: translateX(-50%);
+        height: 55px; /* isteğe bağlı */
+        order: 2;
+        
+    }
+
+    /* SOLDA top-left öğeleri */
+    .top-left {
+        order: 1;
+        
+        gap: 10px;
+        position: absolute;
+        left: 10px;
+    }
+
+    /* SAĞDA hamburger */
+    .hamburger {
+        order: 3;
+        display: block;
+        z-index: 999;
+    }
+
+    /* Menü dropdown */
+    .menu {
+        display: none; 
+        flex-direction: column;
+        gap: 25px;
+        text-align: center;
+        
+        background: #000000;
+        border-top: 1px solid #eee;
+        color: #fff;
+        width: 100%;
+    }
+    .menu a{
+      color:#fff;
+    }
+
+    .menu.active {
+        display: flex;
+    }
+}
+
+@media (max-width: 602px){
+    .top-right .login-dropdown{
+      display: none;
+    }
+}
+
+
+
+
+
+
+
+/* Program Section */
+.program {
+    padding: 20px;
+}
+
+/* Title */
+.program-title {
+    color: #0b6623;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+/* Intro paragraph */
+.program-intro {
+    text-align: justify;
+    margin-bottom: 24px;
+    font-size: 20px;
+    color: #212529;
+    font-family: Arial, sans-serif;
+}
+
+/* Table */
+.program-table {
+    width: 450px;
+    border-collapse: collapse;
+}
+
+.firstRow td.day-header {
+    background: #006A31;
+    color: #fff;
+    word-break: break-word;
+    padding: 12px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.day-item {
+    background: #fafafa;
+    padding: 12px;
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    color: #212529;
+    padding-bottom: 20px;
+    
+    
+}
+
+/* Note paragraph */
+.program-note {
+    text-align: left;
+    margin: 24px 0;
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #212529;
+}
+
+/* Instructions Box */
+.instructions-box {
+    padding: 30px;
+    background: #f3f3f3;
+}
+
+.instruction-title {
+    font-size: 20px;
+    font-family: Arial, sans-serif;
+    color: #212529;
+    margin-bottom: 8px;
+}
+
+.instruction-list {
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    color: #212529;
+    text-align: justify;
+}
+
+
+
+
+.hero-slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-container {
+    display: flex;
+    width: 100%;
+    transition: transform 0.8s ease-in-out;
+}
+
+.slide {
+    width: 100%;
+    flex-shrink: 0;
+    display: block;
+}
+
+.committee-titlee {
+    position: relative;
+    text-align: center;
+    left: 16%;
+    transform: translateX(-50%);
+    color: #0b6623; 
+    font-size: 2rem;
+    display: inline-block;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.committee-titlee::before,
+.committee-titlee::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5px;
+    background: #ccc;
+    width: 85%;    
+}
+
+.committee-titlee::before { left: -82%; }
+.committee-titlee::after  { right: -82%; }
+
+
+
+
+@media (max-width: 1050px) {
+    .committee-titlee {
+        
+        font-size: 1.7rem;
+        padding: 0 12px;
+        
+    }
+    .committee-titlee::before,
+    .committee-titlee::after {
+      display: none;
+        width: 55%;
+    }
+    .committee-titlee::before { left: -55%; }
+    .committee-titlee::after  { right: -55%; }
+}
+
+
+
+/* TOPICS */
+.topics-section {
+    text-align: center;
+    width: 100%;
+    padding: 40px 0; /* İstersen 0 yapabilirsin */
+    background: #f7f7f7;
+    
+}
+.topics-title {
+    position: relative;
+    text-align: center;
+    font-size: 40px;
+    color: #0b6623;
+    display: inline-block;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    font-weight: 400;
+    white-space: nowrap; /* taşmayı tamamen engeller */
+}
+
+.topics-title::before,
+.topics-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5px;
+    background: #ccc;
+    width: 150%;     /* 📱📱 Responsive çizgi */
+}
+
+.topics-title::before { left: -152%; }
+.topics-title::after { right: -152%; }
+
+.topics-subtitle {
+    font-size: 18px;
+    color: #6d6d6d;
+    margin-bottom: 40px;
+}
+
+/* ABOUT 전용 반응형 */
+@media (max-width: 900px) {
+   .topics-title {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    .topics-title::before,
+    .topics-title::after {
+        width: 142%;   /* mobilde daha kısa çizgi */
+    }
+
+    .topics-title::before { left: -152%; }
+    .topics-title::after { right: -152%; }
+}
+@media (max-width: 600px) {
+    .topics-title {
+        font-size: 28px;
+        padding: 0 10px;
+    }
+    .topics-title::before,
+    .topics-title::after {
+        width: 122%;   /* mobilde daha kısa çizgi */
+    }
+
+    .topics-title::before { left: -132%; }
+    .topics-title::after { right: -132%; }
+}
+
+
+
+.topics-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;            /* istersen 0 yapabilirsin */
+    width: 100%;          /* %90 yerine tam genişlik */
+    margin: 0;            /* auto kaldırıldı – boşluk kalmasın diye */
+}
+
+.topic-card {
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    margin-bottom: 0px;
+}
+
+.topic-card-title {
+    padding: 20px;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #000;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.topic-card img {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+.page-title {
+    width: 100%;
+    background-color: #0b6623; /* fotodaki yeşil renk */
+    color: white;
+    text-align: center;
+    padding: 35px 0;
+    margin-top: 0px;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.talkwithus{
+font-size: 20px;
+letter-spacing: 1px;
+color: white;
+    text-align: center;
+    padding-top: 4px;
+}
+
+/* LOGIN */
+.login-container {
+    width: 100%;
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #f4f4f4;
+    padding: 0;
+    
+    
+}
+
+.login-container form {
+    background: white;
+    padding: 35px;
+    width: 420px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 15px rgba(0,0,0,0.15);
+    
+    
+}
+@media (max-width: 1500px) {
+    /* 993px ve altı ekranlarda çalışacak CSS buraya */
+    .login-container form{
+      margin-top: 20px;
+      margin-bottom: 20px;
+    }
+}
+
+.login-form-group {
+    margin-bottom: 18px;
+}
+
+.login-form-group input {
+    width: 100%;
+    padding: 14px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    border-radius: 6px;
+    transition: 0.2s;
+}
+
+.login-form-group input:focus {
+    border-color: #006A31;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 122, 51, 0.4);
+}
+
+.login-form-group input[type="submit"] {
+    background: #006A31;
+    color: white;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    padding: 14px;
+    margin-top: 10px;
+    transition: 0.25s;
+    border-radius: 8px;
+}
+
+.login-form-group input[type="submit"]:hover {
+    background: #005e27;
+}
+
+.errors {
+    background-color: #ffdddd;
+    border: 1px solid #ff5c5c;
+    padding: 12px 20px;
+    margin-bottom: 0px;
+    border-radius: 6px;
+}
+
+.errors p {
+    margin: 5px 0;
+    color: #a70000;
+    font-weight: 500;
+}
+
+.success {
+    background-color: #ddffdd;
+    border: 1px solid #4CAF50;
+    padding: 12px 20px;
+    margin-bottom: 0px;
+    border-radius: 6px;
+    color: #155724;
+    font-weight: 500;
+}
+
+
+
+
+/* Mobile optimization */
+@media (max-width: 480px) {
+    .login-container form {
+        width: 90%;
+        padding: 25px;
+    }
+}
+
+.already-account {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 15px;
+    color: #333;
+}
+
+.already-account a {
+    color: #007a33;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.already-account a:hover {
+    text-decoration: underline;
+}
+
+
+
+.login {
+    cursor: pointer;
+}
+
+.login-dropdown {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.logout-menu {
+    display: none;
+    position: absolute;
+    top: 25px;
+    left: 0;
+    width: 100%;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 6px 12px;
+    z-index: 999;
+}
+
+.logout-menu a {
+    color: green;
+    text-decoration: none;
+}
+
+.logout-menu.show {
+    display: block;
+}
+
+
+
+
+/*body
+  font-family: Arial, sans-serif;
+  margin: 0;
+}*/
+
+.contact-section {
+  width: 100%;
+  max-width: 950px;
+  margin: auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact-section h1 {
+  font-size: 40px;
+  margin-bottom: 5px;
+}
+
+.contact-section .subtitle {
+  font-size: 18px;
+  margin-bottom: 40px;
+  color: #555;
+}
+
+.contact-form {
+  width: 100%;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row input {
+  flex: 1;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 14px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+textarea {
+  height: 180px;
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+.checkbox {
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.checkbox a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.send-btn {
+  background-color: #056320;
+  color: white;
+  padding: 14px 32px;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.send-btn:hover {
+  background-color: #044f19;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
+
+/*------------------------------------------------------------------------------------------------------*/
+/*=============Footer============= */
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+/* Container */
+.footer-inner {
+  background: #fff;
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+  
+}
+
+/* Logo */
+.footer-logo {
+    display: flex;
+
+    gap: 8px;
+    margin-bottom: 25px;
+}
+
+.footer-logo img {
+  padding-left: 150px; 
+  height: 60px;
+}
+
+.footer-logo span {
+    font-size: 0.8rem;
+}
+
+.footer-top {
+    display: flex;
+    align-items: center;
+}
+
+
+.footer-nav-wrapper {
+    background: #ffffff;
+    padding: 35px 35px; 
+}
+
+.footer-nav {
+    margin-bottom: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 35px;
+}
+
+.footer-nav a {
+    color: #999;
+    font-weight: 450;
+    text-decoration: none;
+}
+
+.footer-nav a:hover {
+    color: #333;
+}
+
+.footer-nav .active {
+    color: #333 !important;
+    font-weight: 700;
+}
+
+
+/* Icon */
+
+.footer-icons-wrapper {
+    background: #f4f4f4;
+    padding: 50px 0px 25px;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    gap: 28px;
+    margin-bottom: 25px;
+}
+
+.footer-icons a {
+    font-size: 28px;   
+    color: #333;
+    transition: 0.2s ease;
+}
+
+.footer-icons a .fa-phone:hover {
+    color: #4B7AB0;
+}
+
+.footer-icons a .fa-envelope:hover {
+    color: #006A31;
+}
+
+.footer-icons a .fa-map-marker-alt:hover {
+    color: #ff0000;
+}
+
+/* Tablet + Mobile */
+@media (max-width: 992px) {
+
+    .footer-logo {
+        display: none;
+    }
+
+    .footer-nav .active {
+        display: none;
+    }
+
+    .footer-nav {
+        flex-direction: column;
+        gap: 30px;
+        margin: 15px 0px;
+    }
+    
+    .footer-nav a {
+        font-size: 16px !important;   /* ← px 지정 → 절대 줄어들지 않음 */
+        font-weight: 400;
+        color: #000 !important;
+
+    }
+
+    .footer-nav a:hover {
+        color: #006A31 !important;  /* 원하는 초록색으로 바꿀 수 있음 */
+    }
+}
+
+/*==========conference===========*/
+/* About */
+
+body {
+    margin: 0;
+    font-family:  Arial, sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: left;
+    background-color: #fff;
+}
+
+.about-section {
+    text-align: center;
+    width: 100%;
+    padding: 40px 0;
+}
+
+.gray-box {
+    background-color: #f3f3f3;
+    padding: 60px;
+    border-radius: 10px;
+    margin: 20px auto; 
+    max-width: 1000px; 
+}
+
+.gray-box p {
+    line-height: 1.5; 
+    margin-bottom: 16px;
+    text-align: justify;
+}
+
+.gray-box h3 {
+    color: #006A31; 
+    font-size: 35px; 
+    padding-bottom: 15px; 
+    font-weight: 500;
+}
+
+/* --- Tablet (992px) --- */
+@media (max-width: 1024px) {
+    .gray-box {
+        margin: 0 30px;  
+        padding: 40px; 
+    }
+}
+
+/* History */
+
+.history-card-title {
+    padding: 20px;
+    font-size: 24px;
+    line-height: 1.3;
+    color: #000;
+    max-width: 80%;
+    margin: 0 auto;
+}
+
+.topic-card .topic-content:first-of-type {
+    min-height: 150px;
+}
+
+.topic-content {
+    padding: 0 20px;
+    color: #333;
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.topic-overview {
+    margin-bottom: 15px;
+}
+
+.topic-subtitle {
+    font-size: 18px;
+    margin: 15px 0 8px 0;
+    font-weight: 600;
+    color: #006A31;
+}
+
+.topic-list {
+    margin: 0 0 10px 18px;
+    padding: 0;
+}
+
+.topic-list li {
+    margin-bottom: 6px;
+}
+
+@media (max-width: 768px) {
+    .topics-cards {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+
+/* Committee */
+.committee-section {
+  width: 90%;
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 8px;
+}
+.committee-title {
+    position: relative;
+    text-align: center;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #006A31; 
+    font-size: 2rem;
+    display: inline-block;
+    padding: 0 20px;
+    margin-bottom: 5px;
+    font-weight: 500;
+    white-space: nowrap; /* Prevent breaking */
+}
+
+.committee-title::before,
+.committee-title::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 2.5px;
+    background: #ccc;
+    width: 120%;     /* Responsive width */
+}
+
+.committee-title::before { left: -122%; }
+.committee-title::after  { right: -122%; }
+
+/* ========================================
+   RESPONSIVE BREAKPOINTS
+   ======================================== */
+@media (max-width: 900px) {
+    .committee-title {
+        font-size: 1.7rem;
+        padding: 0 12px;
+    }
+    .committee-title::before,
+    .committee-title::after {
+        width: 115%;
+    }
+    .committee-title::before { left: -120%; }
+    .committee-title::after  { right: -120%; }
+}
+
+@media (max-width: 600px) {
+    .committee-title {
+        font-size: 1.5rem;
+        padding: 0 10px;
+    }
+    .committee-title::before,
+    .committee-title::after {
+        width: 85%;
+    }
+    .committee-title::before { left: -90%; }
+    .committee-title::after  { right: -90%; }
+}
+
+
+
+.committee-list {
+  list-style: disc;
+  padding-left: 2.7rem;      
+  margin: 0;
+}
+
+.committee-list li {
+  font-size: 16px;            
+  line-height: 1.3;           
+  margin-bottom: 8px;        
+  color: #111;
+  word-wrap: break-word;
+}
+
+.committee-list li::marker {
+  color: #111;            
+  font-size: 1.05em;        
+}
+
+/* SPONSOR */
+.sponsor-section {
+    background-color: #f7f7f7;
+    padding: 40px 0;
+}
+
+.sponsor-wrapper {
+    width: 55%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.sponsor-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 90px;
+    align-items: start;
+    margin: 20px 0;
+}
+
+.sponsor-row.single {
+    grid-template-columns: 1fr;
+}
+
+.sponsor-block {
+    text-align: left;
+}
+
+.sponsor-heading {
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 25px;
+    color: #333;
+}
+
+.sponsor-logo {
+    width: 200px;
+    display: block;
+}
+
+.supporter-logos {
+    display: flex;
+    justify-content: flex-start;
+    gap: 40px;
+    margin-top: 20px;
+}
+
+.supporter-logos img {
+    width: 220px;
+    border-radius: 10px;
+    border: 2px solid #ddd;
+}
+
+/* --Tablet-- */
+@media (max-width: 992px) {
+    .sponsor-wrapper {
+        width: 70%;
+    }
+}
+
+/* --Mobile-- */
+@media (max-width: 882px) {
+
+    .sponsor-wrapper {
+        width: 90%;
+    }
+
+    .sponsor-row {
+        grid-template-columns: 1fr;
+        row-gap: 40px;
+        justify-items: center;
+    }
+
+    .sponsor-block {
+        text-align: center;
+    }
+
+    .sponsor-logo {
+        margin: 0 auto;
+    }
+
+    .supporter-logos {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .supporter-logos img {
+        width: 200px;
+    }
+}
+
+/*=========== Program ===========*/
+.themes-section {
+    background: #f7f7f7;
+}
+
+.themes {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 70px 8px 0px;
+  color: #212529;
+}
+
+.themes-list {
+  list-style-type: decimal !important;
+  padding-left: 1.7rem;   
+  margin: 0;
+}
+
+.themes-list li {
+  font-size: 16px;
+  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #212529;
+  word-wrap: break-word;
+}
+
+.themes-list li::marker {
+  color: #212529;
+  font-size: 1.05em;
+}
+
+.themes-card-title {
+    padding: 20px 0 0;
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 1.3;
+    color: #006A31;
+    max-width: 80%;
+    margin: 0 auto 20px auto;
+}
+
+.themes-card {
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    padding-bottom: 20px;
+}
+
+.themes-card p{
+    padding: 0 20px;
+}
+
+/* Program */
+.program {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 30px 8px 0px;
+  color: #212529;
+}
+
+/*========= Submission ========*/
+p a {
+  color: #212529;
+}
+
+p a:hover {
+  text-decoration: underline;
+}
+
+.submission-container {
+    width: 100%;
+    padding: 0 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.submission {
+  width: 90%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 80px 8px 0px;
+  color: #212529;
+}
+
+
+/* FORM */
+.question-section {
+  background: #efefef;
+  padding: 60px 15px;
+}
+
+/* TITLE */
+.title-box {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.title-box h2 {
+  font-size: 2.3rem;
+  font-weight: 450;
+  margin-bottom: 5px;
+}
+
+.title-box p {
+  color: #212529;
+  font-size: 16px;
+}
+
+/* FORM CONTAINER */
+.question-form {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+/* ROW WITH TWO INPUTS */
+.form-row {
+  display: flex;
+  gap: 30px;
+  margin-bottom: 16px;
+}
+
+.form-row > * {
+  flex: 1;
+}
+
+.form-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* INPUTS */
+.question-form input,
+.question-form textarea,
+.form-control-select {
+  width: 100%;
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #cfd3d8;
+  border-radius: .25rem;
+  background: white;
+}
+
+.question-form input:focus,
+.question-form textarea:focus,
+.form-control-select:focus {
+  border-color: #3b82f6;   
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3); 
+}
+
+
+.form-control-select:focus {
+  outline: none;
+  border-color: #006A31;
+}
+
+.hidden-input {
+  display: none;
+}
+
+.form-control-select {
+  color: #777;
+  font-size: 15px;     
+}
+
+.form-control-select option {
+  color: #000;        
+}
+
+/* TEXTAREA */
+.question-form textarea {
+  resize: vertical;
+  margin-bottom: 15px;
+}
+
+/* CHECKBOX FIX */
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0 25px;
+  font-size: 14px;
+  color: #444;
+  text-align: left;
+}
+
+.checkbox-row input[type="checkbox"] {
+  width: auto !important;
+  height: auto;
+  margin: 0;
+}
+
+.checkbox-row label {
+  margin: 0;
+  white-space: nowrap;
+}
+
+.checkbox-row a {
+  color: #006A31;
+}
+
+/* BUTTON */
+.submit-btn {
+  display: block;
+  margin: 0 auto;
+  padding: 6px 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+  background: #006A31;
+  color: white;
+  border: none;
+  border-radius: .25rem;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background: #005327;
+}
+/*======== General Container for AIITA Registration ========*/
+.aiita-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* yatay ortalama */
+    justify-content: flex-start; /* dikeyde üstten başlat */
+    padding: 40px 20px;
+    max-width: 1200px; /* sayfa genişliği sınırı */
+    margin: 0 auto; /* sayfa ortası */
+    box-sizing: border-box;
+}
+
+/* Slideshow Title */
+.aiita-slideshow-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 25px;
+    text-align: center;
+}
+.aiita-slideshow {
+    position: relative;
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto 70px auto;
+    overflow: hidden;
+    border-radius: 30px;
+}
+
+.aiita-slides {
+    display: flex;
+    transition: transform 0.8s ease-in-out;
+}
+
+.aiita-slides img {
+    width: 100%; /* container genişliği kadar */
+    height: 500px;
+    object-fit: cover;
+    flex-shrink: 0;
+    border-radius: 30px;
+}
+
+
+
+/* Slideshow Arrows */
+.aiita-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 50%;
+    user-select: none;
+}
+
+.aiita-arrow.left { left: -40px; }
+.aiita-arrow.right { right: -40px; }
+
+/* H2 Title */
+#aiita-registration h2 {
+    text-align: center;
+    color: #006A31;
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+/* Fees Section */
+.aiita-fees {
+    width: 80%;
+    margin: 0 auto 40px auto;
+}
+
+.aiita-fees h3 {
+    color: #006A31;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.aiita-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto;
+}
+
+.aiita-table th, .aiita-table td {
+    border: 1px solid #dce3ec;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Buttons */
+.aiita-btn {
+    display: inline-block;
+    background: #000000;
+    color: #fff;
+    padding: 10px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+.aiita-btn.aiita-secondary {
+    background: #e8eef5;
+    color: #025634;
+}
+
+/* Options Section */
+.aiita-options {
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+.aiita-options h3 {
+    color: #006A31;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Refund Section */
+.aiita-refund {
+    width: 80%;
+    margin: 0 auto 60px auto;
+    text-align: center;
+}
+
+.aiita-refund h3 {
+    color: #006A31;
+    font-size: 1.75rem;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.aiita-refund ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.aiita-refund ul li {
+    margin-bottom: 10px;
+}
+
+/* Modal */
+.aiita-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.aiita-modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 320px;
+}
+
+.aiita-modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin: 6px 0;
+    border: 1px solid #ccc;
+}
+
+.aiita-form-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+
+
+#welcome-section {
+    text-align: center;
+    padding: 40px 0;
+}
+
+.blue-text {
+    color: #007a33;
+    font-weight: 700;
+}
+
+#welcome-section h1 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #333;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #666;
+    margin-top: 10px;
+}
+
+.countdown-title {
+    margin-top: 40px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.countdown-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 30px;
+    flex-wrap: wrap;
+}
+
+.countdown-item {
+    text-align: center;
+    display: flex;            /* EKLENECEK */
+    flex-direction: column;   /* EKLENECEK */
+    align-items: center;      /* EKLENECEK → yazı ve circle tam ortada */
+}
+
+.circle {
+    width: 140px;
+    height: 140px;
+    border: 10px solid #007a33;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    color: #333;
+}
+
+.label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+    color: #444;
+}
+
+
+@media (max-width: 600px) {
+
+     .countdown-item {
+        flex: 0 0 calc(50% - 20px); /* 2 sütun */
+    }
+
+    .circle {
+        width: 170px;
+        height: 170px;
+        font-size: 28px;
+    }
+}
+
+
+/* ==================== RESPONSIVE ADJUSTMENTS ==================== */
+
+/* Breakpoints:
+   - Large: > 992px (default styles)
+   - Tablet: <= 992px
+   - Phone: <= 600px
+*/
+
+@media(max-width: 1200px){
+  .hero-slider { height: 320px; }
+  .slider-container img, .slide img { width: 100%; height: 100%; object-fit: cover; }
+}
+/* ---------- TABLET (<=992px) ---------- */
+@media (max-width: 992px) {
+
+  /* Top bar: reduce big paddings so content fits */
+  .top-bar {
+    padding: 12px 60px;
+  }
+
+  .logo {
+    height: 58px;
+    margin-left: 10px;
+  }
+
+  /* Fix menu positioning (remove weird negative margin) */
+  .menu {
+    margin-left: 0;
+    gap: 18px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+
+  .menu a {
+    font-size: 18px;
+    padding: 10px 8px;
+  }
+
+  .top-right {
+    gap: 12px;
+  }
+
+  /* Topics grid -> 2 columns on tablet */
+  .topics-cards {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+    padding: 0 20px;
+  }
+
+  .topic-card img {
+    height: 260px;
+  }
+  
+
+  /* Slideshow container ortala */
+.aiita-slideshow {
+    margin: 0 auto 70px auto; /* üst:0, sağ: auto, alt:70px, sol:auto */
+    position: relative; /* oklar için gerekli */
+    width: 60%; /* istersen %70 veya %80 yapabilirsin */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* içerikleri yatay ortala */
+}
+
+.question-form ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+}
+/* Slideshow başlığı ortala */
+.aiita-slideshow-title {
+    font-size: 28px;
+    font-weight: 600;
+    color: #000000;
+    text-align: center; /* başlığı ortala */
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+  .aiita-slides img {
+    width: 100%;             /* her resim container kadar geniş olsun */
+    flex-shrink: 0;          /* küçülmesini engelle */
+    object-fit: cover;       /* resimler bozulmasın */
+}
+.aiita-slides {
+    display: flex;           /* yan yana dizmek için */
+    width: 100%;             /* container genişliği */
+    overflow: hidden;        /* taşan kısımları gizle */
+}
+
+  /* Countdown: keep circles but reduce size */
+  .circle {
+    width: 110px;
+    height: 110px;
+    font-size: 22px;
+  }
+
+  /* Contact form spacing */
+  .question-section {
+    padding: 40px 20px;
+  }
+
+  .question-form {
+    max-width: 720px;
+  }
+
+}
+
+/* ---------- PHONE (<=600px) ---------- */
+@media (max-width: 600px) {
+
+  /* Top bar stacks vertically */
+  
+
+  /* Hero slider: reduce height */
+  .hero-slider { height: 220px; }
+  .slider-container img, .slide img { width: 100%; height: 100%; object-fit: cover; }
+
+  /* Topics: single column */
+  .topics-cards {
+    grid-template-columns: 1fr;
+    gap: 14px;
+    padding: 0 16px;
+  }
+
+  .topic-card img {
+    height: 200px;
+  }
+
+  
+  .circle {
+    width: 90px;
+    height: 90px;
+    border-width: 8px;
+    font-size: 18px;
+  }
+
+  /* Contact form: vertical inputs */
+  .form-row { flex-direction: column; gap: 12px; }
+  .question-form { max-width: 100%; padding: 0 12px; }
+
+  .title-box h2 { font-size: 1.6rem; }
+  .title-box p { font-size: 14px; }
+
+  /* Slideshow adjustments */
+  
+  .aiita-slideshow { width: 100%; margin-left: 0; }
+  .aiita-slideshow-title { margin-left: 0; text-align: center; }
+
+  /* Footer logo padding reset */
+  .footer-logo img { padding-left: 0; height: 50px; }
+
+  /* Registration card and tables shrink */
+  #aiita-registration { margin-left: 0; width: 95%; }
+  .aiita-table { width: 100%; }
+
+}
+
+/* ---------- EXTRA TWEAKS: small desktop (<=1200px) ---------- */
+@media (max-width: 1200px) {
+  .top-bar { padding: 12px 80px; }
+}
+
+/* End of responsive adjustments */
+
+/* Submission Container */
+.submission-container {
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+
+/* Submission title */
+.submission-title {
+    color: #006A31;
+    font-weight: bold;
+    font-size: 2.5rem;
+    padding-left: 30px;
+}
+
+/* Sections */
+.submission-section {
+    padding: 30px;
+}
+
+.submission-gray {
+    background: #f2f2f2;
+}
+
+/* Section titles */
+.section-title {
+    color: #006A31;
+    font-weight: 600;
+    font-size: 1.75rem;
+}
+
+/* Lists */
+.section-list {
+    font-size: 1rem;
+    font-weight: 400;
+    padding-left: 1.1rem;
+}
+
+/* Form Section */
+.question-section .title-box h2 {
+    font-size: 2rem;
+    color: #006A31;
+}
+
+.question-section .title-box p {
+    font-size: 1rem;
+    color: #212529;
+}
+
+/* Form Styles */
+.question-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.form-row input, 
+.form-row select,
+textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.checkbox-row {
+    margin-bottom: 15px;
+}
+
+.submit-btn {
+    background: #006A31;
+    color: white;
+    font-size: 1rem;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    background: #00522a;
+}
+/* Listeleri başlıkla aynı hizaya getirme */
+.section-list {
+      /* default bullet'ları kaldırır */
+    padding-left: 3px;   /* soldan boşluk kaldırılır */
+    margin-left: 0;    /* margin varsa kaldırılır */
+}
+
+
+
+/* ========================= GLOBAL ========================= */
+.aiita-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    font-family: Arial, sans-serif;
+    color: #222;
+}
+
+/* ========================= HEADINGS (GREEN STYLE) ========================= */
+.aiita-container h2,
+.aiita-container h3 {
+    color: #0b6623; /* conference green */
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.aiita-container h2 {
+    font-size: 32px;
+    margin-top: 50px;
+}
+
+.aiita-container h3 {
+    font-size: 26px;
+    margin-top: 40px;
+}
+
+/* ========================= LISTS ========================= */
+.aiita-container ul {
+    margin-top: 10px;
+    padding-left: 20px;
+    line-height: 1.8;
+    font-size: 16px;
+}
+
+/* ========================= GREY BOXES LIKE THE SCREENSHOT ========================= */
+.aiita-box,
+.aiita-details,
+.aiita-location,
+.aiita-refund {
+    background: #f4f4f4;
+    padding: 25px 30px;
+    border-radius: 4px;
+    margin-top: 20px;
+}
+
+/* ========================= LINKS ========================= */
+.aiita-container a {
+    color: #0b4f91;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.aiita-container a:hover {
+    text-decoration: underline;
+}
+
+/* ========================= TABLE ========================= */
+.aiita-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+.aiita-table th {
+    background: #0b6623;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    text-align: left;
+}
+
+.aiita-table td {
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+}
+
+/* Hover */
+.aiita-table tr:hover td {
+    background: #eef6ee;
+}
+
+/* ========================= REGISTRATION OPTIONS ========================= */
+.aiita-options {
+    margin-top: 40px;
+    padding: 25px;
+    background: #f4f4f4;
+    border-radius: 5px;
+}
+
+.aiita-options a {
+    display: inline-block;
+    margin-right: 15px;
+    font-size: 17px;
+}
+
+/* ========================= SLIDESHOW ========================= */
+.aiita-slideshow-title {
+    font-size: 26px;
+    color: #0b6623;
+    margin-bottom: 15px;
+    font-weight: 700;
+}
+
+.a
+.aiita-slides img.active {
+    display: block;
+}
+
+/* Hover */
+.aiita-arrow:hover {
+    background: rgba(0,0,0,0.6);
+}
+
+
+/* ========================= RESPONSIVE ========================= */
+@media (max-width: 1100px) {
+    .aiita-container {
+        padding: 20px;
+    }
+    .aiita-slideshow-title{
+      display: none;
+    }
+
+    .aiita-container h2 {
+        font-size: 26px;
+    }
+
+    .aiita-container h3 {
+        font-size: 22px;
+    }
+
+    .aiita-slideshow,
+    .aiita-slides img {
+        width: 100%;
+    height: auto;        /* önemli: responsive için */
+    display: none;
+    border-radius: 6px;
+    }
+}
+
+
+.form-row {
+    display: flex;
+    gap: 10px;
+}
+
+.form-control-select {
+    width: 100%;
+    transition: width 0.3s ease;
+}
+
+/* Shrink dropdown when Other is selected */
+.form-control-select.shrink {
+    width: 60%;
+}
+
+#otherInput {
+    width: 40%;
+    display: none;
+}
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  background: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  text-align: center;
+  max-width: 350px;
+}
+
+.close-btn {
+  margin-top: 15px;
+  padding: 8px 15px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.close-btn:hover {
+  background-color: #555;
+}
